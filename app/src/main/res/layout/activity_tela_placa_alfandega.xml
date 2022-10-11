@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DCDBDB"
     tools:context=".TelaPlacaAlfandega">
 
     <TextView
@@ -12,7 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="43dp"
         android:layout_marginBottom="669dp"
-        android:text="TextView"
+        android:text="Qual o Significado dessa Placa?"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -22,8 +25,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="237dp"
+        android:layout_height="124dp"
         android:layout_marginTop="49dp"
         android:layout_marginBottom="491dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +35,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/alfandega"
+        tools:srcCompat="@drawable/alfandega" />
 
     <RadioGroup
         android:id="@+id/rdGroupAlfadega"
@@ -50,25 +54,34 @@
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:backgroundTint="#101010"
+            android:onClick="OnRadioButtonClicked"
+            android:text="Parada Opcional em Posto da Policia Federal"
+            android:textColor="#101010" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:onClick="OnRadioButtonClicked"
+            android:text="Parada Obrígatoria em  da Posto da Policia Federal"
+            android:textColor="#101010" />
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:onClick="OnRadioButtonClicked"
+            android:text="Atenção a Pista Lisa"
+            android:textColor="#101010" />
 
         <RadioButton
             android:id="@+id/rdAlfadega"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Alfadega" />
+            android:onClick="OnRadioButtonClicked"
+            android:text="Parada Obrigátorio no posto da Alfadega"
+            android:textColor="#101010" />
     </RadioGroup>
 
     <Button
@@ -77,8 +90,9 @@
         android:layout_height="48dp"
         android:layout_marginTop="51dp"
         android:layout_marginBottom="164dp"
+        android:enabled="false"
         android:onClick="onConfirmar"
-        android:text="Button"
+        android:text="Responder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

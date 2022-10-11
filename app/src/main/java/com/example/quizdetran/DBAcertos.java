@@ -13,7 +13,7 @@ public class DBAcertos extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table acerto(_id integer primary key autoincrement," +
-                "acertosUser integer not null);");
+                "acertosUser integer not null, dataTeste text not null);");
     }
 
     @Override

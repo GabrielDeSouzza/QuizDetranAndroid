@@ -13,6 +13,20 @@
         android:theme="@style/Theme.QuizDetran"
         tools:targetApi="31">
         <activity
+            android:name=".TelaMaodupla"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TelaPreferencia"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".TelaPlacaAlfandega"
             android:exported="false">
             <meta-data

@@ -17,12 +17,14 @@ public class UseDB {
     public void Inserir(Acertos acertos){
         ContentValues contentValues = new ContentValues();
         contentValues.put("acertosUser", acertos.getAcertos());
+        contentValues.put("dataTeste", acertos.getData());
         db.insert("acerto", null, contentValues);
     }
     public void deletar(){
-        db.execSQL("drop table acerto");
+        db.execSQL("delete from acerto");
     }
-    public List<Integer> pegarDados(){
+
+    public List<Integer> pegarAcertos(){
         List<Integer> listAcertos = new ArrayList<Integer>();
         String[] colunas = new String[]{"acertosUser"};
         Cursor cursor = db.query("acerto", colunas, null,null, null,null,null);
@@ -36,5 +38,21 @@ public class UseDB {
             while (cursor.moveToNext());
         }
         return listAcertos;
+    }
+
+    public List<String> pegarData(){
+        List<String> listData = new ArrayList<String>();
+        String[] colunas = new String[]{"dataTeste"};
+        Cursor cursor = db.query("acerto", colunas, null,null, null,null,null);
+        if(cursor.getCount() >0){
+            cursor.moveToFirst();
+            do{
+                Acertos acertos = new Acertos();
+                acertos.setData( cursor.getString(0));
+                listData.add(acertos.getData());
+            }
+            while (cursor.moveToNext());
+        }
+        return listData;
     }
 }
